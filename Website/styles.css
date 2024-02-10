@@ -11,22 +11,30 @@ font-family: Helvetica Neue;
 	align-items: center;
 	vertical-align: middle;
 	text-align: center;
-	padding: 40px;
+	padding-top: 60px;
+	padding-bottom: 30px;
+	height: 85vh;
+}
+
+.appContainer {
+	margin-bottom: 10px;
 }
 
 .library {
 	background: black;
-	padding: 0px 20px 0px 20px;
+	padding: 0px 20px;
 }
 
+img.appIcon {
+	width: 40px;
+}
 img.app {
 	width: 250px;
 }
 
 .imgContainer {
-	display: block;
-	flex-direction: column;
-	gap: 20px;
+	display: flex;
+	margin-bottom: 20px; /* Adjusted margin for smaller screens */
 }
 
 .appleButton {
@@ -34,8 +42,8 @@ img.app {
 }
 
 .mainLinks {
-	display: block;
-	flex-direction: column;
+	display: flex;
+	gap: 5px;
 	text-align: center;
 }
 
@@ -73,8 +81,8 @@ img.github {
 
 .articleTitle p {
 	display: inline-block;
-	font-size: 64px;
-	line-height: 64px;
+	font-size: 36px;
+	line-height: 36px;
 }
 
 .articles {
@@ -99,20 +107,26 @@ form {
 }
 
 .formTitleContainer {
-	width: 50%;
-	margin: auto;
 	margin-bottom: 20px;
-	text-align: center;
 	font-family: Helvetica Neue;
+}
 
+.formTitleContainer p {
+	color: white;
+	text-align: center;
+	font-size: 14px;
+	margin: auto;
+	margin-bottom: -8px;
 }
 
 .formTitle {
-	color: #FFF;
-	font-size: 14px;
+	display: inline-block;
+	color: white;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
+	margin-bottom: 20px;
 }
 
 .inputContainer {
@@ -138,7 +152,7 @@ form {
 }
 
 textarea {
-	width: 50%;
+	width: 100%;
 }
 
 textarea:focus {
@@ -181,7 +195,6 @@ summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 30px; /* Adjust as needed to contain the icon */
    	cursor: pointer;
    	padding-top: 10px;
    	padding-bottom: 10px;
@@ -303,6 +316,12 @@ a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+
+	.mainContent {
+	padding-top: 30px;
+	padding-bottom: 40px;
+	}
+
 	.mainLinks {
 		display: flex;
 		gap: 10px;
@@ -316,11 +335,7 @@ a:hover {
 	}
 	
 	.inputContainer {
-		padding: 8px;
-		border: 1px solid rgba(255, 255, 255, 0.30);
-		border-radius: 5px;
-		width: 90%;
-		margin: auto;
+		width: 95%;
 		margin-bottom: 2px;
 	}
 	.credits {
@@ -336,7 +351,8 @@ a:hover {
 		font-size: 12px;
 	}
 	.credits .special p {
-		font-size: 10px;
+		font-size: 9px;
+		padding-right: 10px;
 	}
 	.credits p {
 		margin-bottom: 5px;
@@ -346,53 +362,118 @@ a:hover {
 	summary {
 	   	padding-top: 10px;
 	   	padding-bottom: 0px;
+	    display: block;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding-right: 30px; /* Adjust as needed to contain the icon */
+	   	cursor: pointer;
 	}
+
+	.articles {
+		height: 70vh;
+	}
+
 	.articles ul {
-	font-size: 15px;
-	line-height: 18px;
-	padding-left: 0px;
+		font-size: 15px;
+		line-height: 18px;
+		padding-left: 0px;
 	}
 
-.column.email {
-	display: flex;
-    align-items: center;
-    justify-content: left;
+	.column.email {
+		display: flex;
+	    align-items: center;
+	    justify-content: left;
+	}
+
+	.column.privacy {
+		text-align: center;
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+
+	.column,.twitter {
+		display: flex;
+	    align-items: center;
+	    justify-content: right;
+	}
+
+	img.app {
+		width: 100px;
+	}
+
+	.imgContainer {
+		display: flex;
+		gap: 5px;
+		margin-bottom: 15px;
+	}
+
+	a.appleButton {
+		margin-bottom: 20px;
+	}
+
+	div.footerGrid {
+		grid-template-columns: repeat(3, auto);
+	}
+
+	.articles li {
+		margin-bottom: 20px;
+	}
+
+	form {
+		padding: 10px 0px 20px 0px;
+	}
+
+	.library {
+		background: black;
+		padding: 0px 10px;
+	}
+
+	.credits {
+		padding-left: 10px;
+	}
+
+	.footer {
+		padding: 0px 10px;
+		background: white;
+	}
+
+	summary::after {
+	    right: 10px; /* Adjust as needed */
+	}
+
+	.formTitle {
+		font-size: 14px;
+	}
+
+	.inputText {
+		font-size: 12px;
+	}
 }
 
-.column.privacy {
-	text-align: center;
-	display: flex;
-    align-items: center;
-    justify-content: center;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.inputContainer {
+		width: 75%;
+	}
 }
-
-.column,.twitter {
-	display: flex;
-    align-items: center;
-    justify-content: right;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+		.inputContainer {
+		width: 50%;
+	}
+	}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+			.inputContainer {
+				width: 50%;
+			}
 }
-
-img.app {
-	width: 100px;
-}
-
-.imgContainer {
-	margin-bottom: 15px;
-}
-a.appleButton {
-	margin-bottom: 20px;
-}
-
-img.appIcon {
-	width: 50px;
-}
-
-div.footerGrid {
-	grid-template-columns: repeat(3, auto);
-}
-
-.articles li {
-	margin-bottom: 20px;
-}
-
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+			.inputContainer {
+		width: 25%;
+	}
 }
