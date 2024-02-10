@@ -22,6 +22,7 @@
 		E4A85F012B5949AC0052FBD2 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A85F002B5949AC0052FBD2 /* ListViewModel.swift */; };
 		E4B39DE42B5F316600B04932 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B39DE32B5F316600B04932 /* UINavigationControllerExtension.swift */; };
 		E4FA41B22B66F5990016F319 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA41B12B66F5990016F319 /* NameView.swift */; };
+		E4FA6A1F2B77EDC600169C89 /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E452217E2B642E060054D6EB /* EffectsLibrary in Frameworks */,
+				E4FA6A1F2B77EDC600169C89 /* EffectsLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +137,7 @@
 			name = WinningYear;
 			packageProductDependencies = (
 				E452217D2B642E060054D6EB /* EffectsLibrary */,
+				E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */,
 			);
 			productName = WinningYear;
 			productReference = E4FA41B02B66E6170016F319 /* WinningYear.app */;
@@ -438,6 +441,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		E452217D2B642E060054D6EB /* EffectsLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */;
+			productName = EffectsLibrary;
+		};
+		E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */;
 			productName = EffectsLibrary;
