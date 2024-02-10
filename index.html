@@ -3,12 +3,130 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-itunes-app" content="app-id=6476935633, app-argument=myURL">
 	<title>Winning Year App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<h1>Hi! This is the official page for the Winning Year iOS App.</h1>
-<p> Contact Information:</p>
-<p> Email: bmpremo@hotmail.co.uk</p>
-<a href="privacy.html">Privacy Policy</a>
+
+<!--MAIN CONTENT-->
+<div class="mainContent">
+	<div class="appContainer">
+		<div class="appDetailsContainer">
+			<img class="appIcon" src="AppIcon.svg">
+			<div class="appDetails">
+				<p class="appName">Year of Winning</p>
+				<!-- <p class="subtitle">Bla bla bla win today!</p> -->
+			</div>
+		</div>
+	</div>
+	<div class="imgContainer">
+		<img class="app"src="app2.png">
+		<img class="app"src="app1.png">
+		<img class="app"src="app3.png">
+	</div>
+	<a class="appleButton" href="https://apps.apple.com/us/app/winning-year/id6476935633">
+		<img src="AppleButton.svg">
+	</a>
+
+	<div class="mainLinks">
+		<a href="#articles">Articles & Resources</a> <!-- Modified link -->
+		<a href="https://docs.google.com/spreadsheets/d/1J_S2GRy4AFeuYG2g_jlB6loyBTLlYHWrU53eEYJP-Rs/edit?usp=sharing" target="_blank">Product Roadmap and Upcoming Features</a>
+		<a href="#feedback">Feature Requests</a>
+		<a href="https://github.com/wlfbbz/WinningYear" target="_blank"><img class="github" src="github-mark.svg">Open Source Project</a>
+	</div>
+</div>
+	<!--MAIN CONTENT-->
+
+	<!--ARTICLES-->
+	<div class="articles" id="articles">
+		<div class="articleTitle">
+			<p>Articles & Resources</p>
+		</div>
+		<ul>
+			<li><a href="https://hbr.org/2011/05/the-power-of-small-wins">The power of small wins</a></li>
+			<li><a href="https://pubmed.ncbi.nlm.nih.gov/1960640/">Cognitive and emotional reactions to daily events: the effects of self-esteem and self-complexity</a></li>
+			<li><a href="https://nesslabs.com/dear-diary">The science-based benefits of journaling</a></li>
+			<li><a href="https://www.beyondpsychub.com/celebrating-wins/">The Importance of Celebrating Wins and How to Incorporate it into Your Routine</a></li>
+		</ul>
+	</div>
+	<!--ARTICLES-->
+
+<div class="library">
+
+<!--FORM-->
+	<div class="form" id="feedback">
+		<form form method="post" action="https://script.google.com/macros/s/AKfycbzMO66unRCplEKOV0ORiegFddnn8LI0IPzSbx2AOwxYNHqsaCAgsusJPqKw2E9HwaLkdw/exec" id="feedbackForm" name="feedback">
+
+			<div class="formTitleContainer">
+		  		<label class="formTitle" for="feedback">Suggestion box - We love feedback!</label><br>
+			</div>
+		  
+		  	<div class="inputContainer">
+			  	<div class="inputTextContainer">
+			  		<textarea class="inputText" type="text" id="feedback" name="feedback" value="" placeholder="Send us feature requests, suggestions, feedback, issues..."></textarea>
+				</div>
+				<div>
+				<button class="submitButton" type="submit"></button>
+		  		<input class="submitText"type="submit" value="Submit">
+		  		</div>
+			</div>
+				</div>
+		</form>
+	</div>
+<!--FORM-->
+
+	<div id="message" style="display: none;"></div>
+
+	<!--CREDITS-->
+	<details class="credits">
+		<summary class="creditTitle">Credits</summary>
+		<div class="design">
+			<p>Design</p>
+			<ul>
+				<li><a href="https://www.figma.com">Figma - Prototyping</a></li>
+				<li><a href="https://developer.apple.com/sf-symbols/">SF Symbols - Icons</a></li>
+				<li><a href="https://www.figma.com/file/JeqVgMOlzya65YKx1YeUru/Ultimate-Free-iPhone-Mockups-Pack-(180-Variants)-(Community)?type=design&t=7BUl0Pu6bzE52Uzc-6">Softermii - Mockups</a></li>
+			</ul>
+		</div>
+		<div class="development">
+			<p>Development</p>
+			<ul>
+				<li><a href="https://cs193p.sites.stanford.edu/2023">Stanford iOS Development Course</a></li>
+				<li><a href="https://www.youtube.com/watch?v=IaNM-J01bJU&t=9s&ab_channel=CornellAppDev">Cornell iOS Development Course *Highly recommend*</a></li>
+				<li><a href="https://apps.apple.com/gb/app/swift-playgrounds/id1496833156?mt=12">Playground Tutorials</a></li>
+				<li><a href="https://www.youtube.com/watch?v=wEf1YS4vyW8&list=PLwvDm4VfkdpheGqemblOIA7v3oq0MS30i&ab_channel=SwiftfulThinking">Swiftful Thinking - To-do-list app</a></li>
+				<li><a href="https://www.youtube.com/watch?v=0ytO3wCRKZU&ab_channel=Indently">Indently - Launch Screen</a></li>
+				<li><a href="https://www.youtube.com/watch?v=lrTTrSiHEuo&ab_channel=tundsdev">Tundsdev - Uploading Apps to the Appstore</a></li>
+				<li><a href="https://www.youtube.com/watch?v=Behzb624Wqs&ab_channel=iOSAcademy">iOS Academy - Sign In with Apple button</a></li>
+				<li><a href="https://getstream.github.io/effects-library/tutorials/effectslibrary/getting-started/">Stream Developer - Congrats Screen</a></li>
+				<li><a href="https://chat.openai.com/">ChatGPT - Coding Help & Debugging</a></li>
+			</ul>
+		</div>
+		<div class="special">
+			<p>Special Thanks</p>
+				<p><a href="http://www.nobadideashere.com">Justicia</a>, Gideon, Samuel Wood, Amile, Efosa, Sam Worldpeace and to my family & friends for all your patience and support - Wouldn't have had the courage to release this if it wasn't for you guys.</p>
+		</div>
+	</details>
+<!--CREDITS-->
+</div>
+<!--FOOTER-->
+	<div class="footer">
+		<div class="footerGrid">
+			<div class="column email">
+				<p>Email: <a href="mailto:hellowinningyear@gmail.com">hellowinningyear@gmail.com</a></p>
+			</div>
+			<div class="column privacy">
+				<a href="privacy.html">Privacy Policy</a>
+			</div>
+			<div class="column twitter">
+				<a href="http://www.twitter.com/winningyearapp">
+					<img class="twitter" src="twitterblack.svg">
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--FOOTER-->
+	    <script src="script.js"></script>
 </body>
 </html>

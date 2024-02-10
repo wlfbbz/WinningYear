@@ -27,7 +27,7 @@ struct AddView: View {
     var body: some View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
-            VStack (alignment: .leading, spacing: 40) {
+            VStack (alignment: .leading, spacing: 30) {
                 Spacer()
                 Text("Hello \(userName)!") // Use the firstName property
                     .font(.system(size: 24))
@@ -37,7 +37,7 @@ struct AddView: View {
                     .foregroundStyle(.white)
                     .frame(height: 70)
                 
-//                // Pagination View
+//                // Pagination View for different prompts
 //                HStack {
 //                    TabView(selection: $selectedTabIndex) {
 //                                        ForEach(0..<items.count, id: \.self) { index in
@@ -72,14 +72,18 @@ struct AddView: View {
                         Text("Add")
                             .foregroundColor(textFieldText.count < 1 ? Color("buttonText") : Color("buttonText"))
                             .padding(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
-                            .background(textFieldText.count < 1 ? Color(Color("buttonColour")) : Color(Color("buttonDisabled")))
+//                            .background(textFieldText.count < 1 ? Color(Color("buttonColour")) : Color(Color("buttonDisabled")))
+                            .background(textFieldText.isEmpty ? Color("buttonColour") : Color("buttonDisabled"))
                             .cornerRadius(19)
                             .padding(.horizontal, -10)
                     })
                     .disabled(textFieldText.isEmpty)
                 }
                 .padding(.bottom, 25)
-                
+                .animation(nil) // Disable animation for this specific HStack
+
+//                Spacer()
+
                 
                 // Hide the default back button and add a Cancel button to dismiss the view
                 .navigationBarBackButtonHidden(true)
@@ -96,9 +100,9 @@ struct AddView: View {
                  .onAppear {
                      isTextFieldFocused = true
                  }
-                
             } //end of Vtsack
             .padding(.horizontal, 20)
+            .padding(.top, 100)
 
         }//end of Zstack
         
