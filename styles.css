@@ -279,33 +279,66 @@ details[open] summary::after {
 	padding-bottom: 10px;
 }
 
+a:hover {
+	color: #a1a1a1;
+}
+
 .footer {
-	padding: 0px 20px 0px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 10px 20px;
+	position: relative;
 	background: white;
 }
 
-.footerGrid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+p.div {
+	margin: 0px;
 }
 
-.column.email {
+.footer .email {
+	display: inline-flex;
+	align-items: center;
+	font-size: 12px;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+.footer .div {
+	position: relative;
+	width: fit-content;
+	margin-top: -1px;
+	letter-spacing: 0;
+	line-height: normal;
+}
+
+.footer .privacy {
 	display: flex;
-    align-items: center;
-    justify-content: left;
+	font-size: 12px;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	position: relative;
+	flex: 1;
+	flex-grow: 1;
 }
 
-.column.privacy {
+.footer .text-wrapper-2 {
+	position: relative;
+	margin-top: -1px;
+	font-weight: 400;
 	text-align: center;
-	display: flex;
-    align-items: center;
-    justify-content: center;
+	letter-spacing: 0;
+	line-height: normal;
 }
 
-.column,.twitter {
-	display: flex;
-    align-items: center;
-    justify-content: right;
+.footer .twitter {
+	position: relative;
+	flex:  0 0 auto;
+	width: 14px;
+	justify-content: center;
+	vertical-align: middle;
 }
 
 .footer p, .footer a { 
@@ -315,9 +348,10 @@ details[open] summary::after {
 	text-decoration: none;
 }
 
-a:hover {
+.footer a:hover { 
 	color: #a1a1a1;
 }
+
 
 @media only screen and (max-width: 600px) {
 
@@ -383,25 +417,6 @@ a:hover {
 		padding-left: 0px;
 	}
 
-	.column.email {
-		display: flex;
-	    align-items: center;
-	    justify-content: left;
-	}
-
-	.column.privacy {
-		text-align: center;
-		display: flex;
-	    align-items: center;
-	    justify-content: center;
-	}
-
-	.column,.twitter {
-		display: flex;
-	    align-items: center;
-	    justify-content: right;
-	}
-
 	img.app {
 		width: 100px;
 	}
@@ -414,10 +429,6 @@ a:hover {
 
 	a.appleButton {
 		margin-bottom: 20px;
-	}
-
-	div.footerGrid {
-		grid-template-columns: repeat(3, auto);
 	}
 
 	.articles li {
@@ -437,11 +448,6 @@ a:hover {
 		padding-left: 10px;
 	}
 
-	.footer {
-		padding: 0px 10px;
-		background: white;
-	}
-
 	summary::after {
 	    right: 10px; /* Adjust as needed */
 	}
@@ -453,19 +459,27 @@ a:hover {
 	.inputText {
 		font-size: 12px;
 	}
+
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-img.app {
-	width: 250px;
-}
+	img.app {
+		width: 250px;
+	}
+	.footer {
+	padding: 10px 10px;
+	}
+	.footer .twitter {
+	vertical-align: top;
+	}
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 	.inputContainer {
 		width: 75%;
 	}
+
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {

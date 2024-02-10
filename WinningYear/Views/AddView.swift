@@ -13,6 +13,7 @@ struct AddView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var listViewModel: ListViewModel
     @State var textFieldText: String = ""
+    @FocusState private var isTextFieldFocused: Bool
     @AppStorage("userName") var userName: String = "" // Add this line
     @State private var dragOffset: CGSize = .zero
 //
@@ -60,6 +61,7 @@ struct AddView: View {
 //            }
                 HStack {
                                     TextField("", text: $textFieldText, prompt: Text("Type something...").foregroundColor(Color("titleGrey")))
+                                        .focused($isTextFieldFocused)
                                         .font(.title3) // Use .title for the font
                                         .foregroundColor(.white)
                     
@@ -95,7 +97,9 @@ struct AddView: View {
                             .foregroundColor(.gray) // Set the color of the SVG image
                     })
                 
-
+                 .onAppear {
+                     isTextFieldFocused = true
+                 }
             } //end of Vtsack
             .padding(.horizontal, 20)
             .padding(.top, 100)
