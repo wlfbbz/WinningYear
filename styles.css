@@ -84,6 +84,11 @@ img.github {
 	line-height: 36px;
 }
 
+.articleTitle .subtitle {
+	display: block;
+	font-size: 20px;
+}
+
 .articles {
 	height: 80vh;
 	background: #EFEEEA;
@@ -373,7 +378,7 @@ a:hover {
 	}
 
 	.articles ul {
-		font-size: 15px;
+		font-size: 12px;
 		line-height: 18px;
 		padding-left: 0px;
 	}
