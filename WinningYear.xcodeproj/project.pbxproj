@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E43FE6C62B67E7260000BD0D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43FE6C52B67E7260000BD0D /* WelcomeView.swift */; };
+		E446D6FC2B7BD1A600D4C044 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */; };
+		E446D6FF2B7DAB7000D4C044 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E446D6FE2B7DAB7000D4C044 /* ConfettiSwiftUI */; };
 		E452217E2B642E060054D6EB /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E452217D2B642E060054D6EB /* EffectsLibrary */; };
 		E45221802B6430E70054D6EB /* Congratulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452217F2B6430E70054D6EB /* Congratulations.swift */; };
 		E46A467A2B58A6CD0052B207 /* WinningYearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A46792B58A6CD0052B207 /* WinningYearApp.swift */; };
@@ -28,6 +30,7 @@
 /* Begin PBXFileReference section */
 		E43FE6C52B67E7260000BD0D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E441B6392B5DD91700E2F481 /* WinningYear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WinningYear.entitlements; sourceTree = "<group>"; };
+		E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E452217F2B6430E70054D6EB /* Congratulations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulations.swift; sourceTree = "<group>"; };
 		E46A46792B58A6CD0052B207 /* WinningYearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningYearApp.swift; sourceTree = "<group>"; };
 		E46A467D2B58A6D10052B207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E446D6FF2B7DAB7000D4C044 /* ConfettiSwiftUI in Frameworks */,
 				E452217E2B642E060054D6EB /* EffectsLibrary in Frameworks */,
 				E4FA6A1F2B77EDC600169C89 /* EffectsLibrary in Frameworks */,
 			);
@@ -60,7 +64,7 @@
 		E46A466D2B58A6CD0052B207 = {
 			isa = PBXGroup;
 			children = (
-				E4FA41B12B66F5990016F319 /* NameView.swift */,
+				E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */,
 				E43FE6C52B67E7260000BD0D /* WelcomeView.swift */,
 				E452217F2B6430E70054D6EB /* Congratulations.swift */,
 				E46A46782B58A6CD0052B207 /* WinningYear */,
@@ -115,6 +119,7 @@
 				E4A09CF92B58A8F0000300A5 /* ListView.swift */,
 				E4A09CFD2B58AD88000300A5 /* AddView.swift */,
 				E4A09CFB2B58AACF000300A5 /* ListRowView.swift */,
+				E4FA41B12B66F5990016F319 /* NameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			packageProductDependencies = (
 				E452217D2B642E060054D6EB /* EffectsLibrary */,
 				E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */,
+				E446D6FE2B7DAB7000D4C044 /* ConfettiSwiftUI */,
 			);
 			productName = WinningYear;
 			productReference = E4FA41B02B66E6170016F319 /* WinningYear.app */;
@@ -169,6 +175,7 @@
 			mainGroup = E46A466D2B58A6CD0052B207;
 			packageReferences = (
 				E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */,
+				E446D6FD2B7DAB7000D4C044 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = E46A466D2B58A6CD0052B207;
 			projectDirPath = "";
@@ -202,6 +209,7 @@
 				E470167D2B5EB59D00D799BE /* SignInView.swift in Sources */,
 				E4A85F012B5949AC0052FBD2 /* ListViewModel.swift in Sources */,
 				E46A467A2B58A6CD0052B207 /* WinningYearApp.swift in Sources */,
+				E446D6FC2B7BD1A600D4C044 /* NotificationManager.swift in Sources */,
 				E4FA41B22B66F5990016F319 /* NameView.swift in Sources */,
 				E43FE6C62B67E7260000BD0D /* WelcomeView.swift in Sources */,
 				E4A09CFA2B58A8F0000300A5 /* ListView.swift in Sources */,
@@ -247,6 +255,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -310,6 +319,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -357,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbara.WinningYear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -393,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbara.WinningYear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -429,6 +439,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E446D6FD2B7DAB7000D4C044 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GetStream/effects-library";
@@ -440,6 +458,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E446D6FE2B7DAB7000D4C044 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E446D6FD2B7DAB7000D4C044 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		E452217D2B642E060054D6EB /* EffectsLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */;

@@ -1,4 +1,3 @@
-//
 //  Congratulations.swift
 //  WinningYear
 //
@@ -6,73 +5,58 @@
 //
 
 import SwiftUI
-import EffectsLibrary
+import ConfettiSwiftUI
 
 struct Congratulations: View {
-    
-    @State private var isActive = false
-    @State private var opacity = 1.0
-    
-    var config = ConfettiConfig(
-        content: [
-            .emoji("🙌🏾", 1.0),
-            .emoji("🙏🏾", 1.0),
-            .emoji("🎉", 1.0),
-            .emoji("🥳", 1.0),
-            .emoji("🎊", 1.0),
-            .emoji("🍾", 1.0),
-            .emoji("🥂", 1.0),
-            .emoji("💪🏾", 1.0),
-            .emoji("👏🏾", 1.0),
-            .emoji("👍🏾", 1.0),
-            .emoji("🏆", 1.0),
-            .emoji("🎈", 1.0),
-            .emoji("🥇", 1.0),
-            .emoji("🏅", 1.0),
-        ],
-        backgroundColor: .green.opacity(0.4),
-        intensity: .low,
-        lifetime: .long,
-        initialVelocity: .fast,
-        spreadRadius: .medium,
-        emitterPosition: .bottom,
-        fallDirection: .upwards
-    )
+    @State private var size = 0.7
+    @State private var counter = 0
     
     var body: some View {
-    
-        ZStack {
-
-            ConfettiView(config: config)
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            
-            VStack (spacing: 60) {
-                Text("Congratulations!")
-                    .font(.largeTitle)
-                Text("🎈🎈🎈")
-                    .font(.largeTitle)
-                Text("You did an amazing job and deserve a 🍪 or a nice green 🍏!")
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 100)
-            }
-            .foregroundColor(.black)
-        }
-        .opacity(opacity)
-        .onAppear {
-            withAnimation(Animation.easeIn(duration: 3)) {
-                self.opacity = 0
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                withAnimation {
-                    self.isActive = true
+        NavigationView {
+            ZStack {
+                Color.black.ignoresSafeArea()
+                VStack {
+                    Text("🏆")
+                        .font(.system(size: 80))
+                        .padding(.bottom, 10)
+                    
+//                    Image("oscarnobg")
+//                        .resizable()
+//                        .frame(width: 200, height: 300)
+//                        .scaleEffect(size)
+//                        .onAppear {
+//                                withAnimation(.easeIn(duration: 1)) {
+//                                    self.size = 0.78
+//                                                }
+//                                            }
+                    Text("Congratulations!")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding(.bottom, 20)
+                        .foregroundColor(.white)
+                    Text("You did an amazing job and deserve a 🍪 or a nice green 🍏")
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 40)
+                        .lineSpacing(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                        .font(.system(size: 16))
+                        .padding(.bottom, 20)
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
                 }
             }
+            .navigationBarHidden(true)
         }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.counter += 1 // Increment counter to trigger confetti animation
+            }
+        }
+
+        .confettiCannon(counter: $counter, num: 50, radius: 500.0)
     }
 }
-#Preview {
-    Congratulations()
+
+struct Congratulations_Previews: PreviewProvider {
+    static var previews: some View {
+        Congratulations()
+    }
 }

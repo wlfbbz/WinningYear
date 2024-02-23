@@ -36,15 +36,21 @@ struct ListView: View {
                 
                 VStack {
                     List {
-                        ForEach(listViewModel.itemsGroupedByPeriod.keys.sorted(by: { sortPeriods(lhs: $0, rhs: $1) }), id: \.self) { period in                        Section /*(header: Text(period).font(.subheadline).textCase(.uppercase).fontWeight(.bold).padding(.bottom, 5).foregroundStyle(.gray).padding(.horizontal, 2))*/ {
+                        ForEach(listViewModel.itemsGroupedByPeriod.keys.sorted(by: { sortPeriods(lhs: $0, rhs: $1) }), id: \.self) { period in                        Section (header: Text(period)/*.font(.subheadline)*/.textCase(.uppercase).font(.system(size: 12, weight: .bold)).padding(.bottom, 5).foregroundStyle(.gray).padding(.horizontal, 2)) {
                                 ForEach(listViewModel.itemsGroupedByPeriod[period]!, id: \.id) { item in
                                     ListRowView(item: item)
+//                                        .padding(.bottom, 5)
                                     .listRowBackground(Color.clear)
                                     .listRowInsets(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
                                     .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                                     .listRowSeparator(.hidden)
                                     .padding(.horizontal)
                                     .background(Color.white)
+//                                    .overlay(
+//                                                RoundedRectangle(cornerRadius: 10)
+//                                                    .stroke(Color.gray, lineWidth: 5)
+//                                                    .opacity(0.2)
+//                                            )
                                 }
                                 .onDelete { indexSet in
                                     listViewModel.deleteItem(period: period, indexSet: indexSet)
@@ -53,10 +59,12 @@ struct ListView: View {
                         }
                         .cornerRadius(10)
                         .padding(.horizontal, -15)
+                        
                     }
                     .listStyle(PlainListStyle())
                 } // end of vstack
                 .padding(.horizontal, 20)
+                .padding(.top, -10)
                 
                 Button(action: {
                                     isAddViewPresented.toggle()
@@ -104,7 +112,7 @@ struct ListView: View {
     
     // Custom sort function for period titles, including years
     private func sortPeriods(lhs: String, rhs: String) -> Bool {
-        let fixedOrder = ["Today", "Yesterday", "Last 7 Days", "Last 30 Days", "Last 6 Months"]
+        let fixedOrder = ["Today", "Yesterday", "Previous 7 Days", "Previous 30 Days", "Previous 6 Months"]
 
         // Check if both lhs and rhs are year values
         if let lhsYear = Int(lhs), let rhsYear = Int(rhs) {
@@ -128,7 +136,7 @@ struct ListView: View {
     }
 }
 
-//testing periods
+////testing periods
 //struct ListView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        let listViewModel = ListViewModel()

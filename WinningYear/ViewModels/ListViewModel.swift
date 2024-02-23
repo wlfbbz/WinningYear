@@ -78,11 +78,11 @@ class ListViewModel: ObservableObject {
                 } else if calendar.isDate(item.timestamp, inSameDayAs: now) {
                     return "Today"
                 } else if let daysAgo = calendar.dateComponents([.day], from: item.timestamp, to: now).day, daysAgo <= 7 {
-                    return "Last 7 Days"
+                    return "Previous 7 Days"
                 } else if let daysAgo = calendar.dateComponents([.day], from: item.timestamp, to: now).day, daysAgo <= 30 {
-                    return "Last 30 Days"
+                    return "Previous 30 Days"
                 } else if let monthsAgo = calendar.dateComponents([.month], from: item.timestamp, to: now).month, monthsAgo <= 6 {
-                    return "Last 6 Months"
+                    return "Previous 6 Months"
                 } else {
                     let yearFormatter = DateFormatter()
                     yearFormatter.dateFormat = "yyyy"

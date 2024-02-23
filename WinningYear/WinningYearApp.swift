@@ -17,6 +17,8 @@ struct WinningYearApp: App {
         WindowGroup {
             SplashScreenView()
                 .environmentObject(listViewModel)
+                .preferredColorScheme(.light) // Setting the color scheme to light mode
+
         }
     }
 }

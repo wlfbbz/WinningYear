@@ -46,7 +46,7 @@ struct SplashScreenView: View {
                     Spacer()
                     ZStack {
                         Image(systemName: "circle.fill")
-                            .shadow(radius: 100)
+//                            .shadow(radius: 100)
                             .font(.system(size: 80))
                             .foregroundColor(.white)
                             .scaleEffect(size)
