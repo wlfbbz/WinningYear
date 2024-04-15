@@ -14,6 +14,7 @@
 
 
 import Foundation
+//import SwiftOpenAI
 
 class ListViewModel: ObservableObject {
     
@@ -52,9 +53,9 @@ class ListViewModel: ObservableObject {
 
 
 
-    
-    func addItem(title: String) {
-        let newItem = ItemModel(title: title, timestamp: Date())
+
+    func addItem(title: String, imageData: Data?) {
+        let newItem = ItemModel(title: title, timestamp: Date(), imageData: imageData) // Pass the imageData here
         items.insert(newItem, at: 0) // Insert the new item at the beginning of the array
     }
 

@@ -7,44 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40E5A3E2BAFA1510047C777 /* NotificationsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E5A3D2BAFA1510047C777 /* NotificationsSettingsView.swift */; };
+		E424665B2BB3084E00D0638E /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424665A2BB3084E00D0638E /* CalendarHomeView.swift */; };
+		E424665D2BB3093C00D0638E /* CustomDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424665C2BB3093C00D0638E /* CustomDatePickerView.swift */; };
+		E424665F2BB5BA3200D0638E /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424665E2BB5BA3200D0638E /* DateValue.swift */; };
+		E424666B2BB62F0300D0638E /* ContributionsCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424666A2BB62F0300D0638E /* ContributionsCalendar.swift */; };
+		E424666D2BB631C600D0638E /* ContributionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E424666C2BB631C600D0638E /* ContributionCell.swift */; };
+		E430EF172B8D2BA6009D897F /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E430EF162B8D2BA6009D897F /* CameraView.swift */; };
 		E43FE6C62B67E7260000BD0D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43FE6C52B67E7260000BD0D /* WelcomeView.swift */; };
 		E446D6FC2B7BD1A600D4C044 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */; };
 		E446D6FF2B7DAB7000D4C044 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E446D6FE2B7DAB7000D4C044 /* ConfettiSwiftUI */; };
-		E452217E2B642E060054D6EB /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E452217D2B642E060054D6EB /* EffectsLibrary */; };
 		E45221802B6430E70054D6EB /* Congratulations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E452217F2B6430E70054D6EB /* Congratulations.swift */; };
+		E4553DD82BA6468A00E3F036 /* StreakCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4553DD72BA6468A00E3F036 /* StreakCalendarView.swift */; };
 		E46A467A2B58A6CD0052B207 /* WinningYearApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A46792B58A6CD0052B207 /* WinningYearApp.swift */; };
 		E46A467E2B58A6D10052B207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46A467D2B58A6D10052B207 /* Assets.xcassets */; };
 		E46A46812B58A6D10052B207 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E46A46802B58A6D10052B207 /* Preview Assets.xcassets */; };
 		E46D2A972B592E10001AD753 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46D2A962B592E10001AD753 /* ItemModel.swift */; };
 		E470167D2B5EB59D00D799BE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470167C2B5EB59D00D799BE /* SignInView.swift */; };
+		E47C02F32BA4BC0A00FC3A97 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C02F22BA4BC0A00FC3A97 /* ImageUtility.swift */; };
+		E47C72502BBB35E4004828C9 /* ContributionsCalendarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C724F2BBB35E4004828C9 /* ContributionsCalendarContent.swift */; };
 		E487F9DD2B5F689500D39C50 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E487F9DC2B5F689500D39C50 /* SplashScreenView.swift */; };
 		E4A09CFA2B58A8F0000300A5 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A09CF92B58A8F0000300A5 /* ListView.swift */; };
 		E4A09CFC2B58AACF000300A5 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A09CFB2B58AACF000300A5 /* ListRowView.swift */; };
 		E4A09CFE2B58AD88000300A5 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A09CFD2B58AD88000300A5 /* AddView.swift */; };
 		E4A85F012B5949AC0052FBD2 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A85F002B5949AC0052FBD2 /* ListViewModel.swift */; };
 		E4B39DE42B5F316600B04932 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B39DE32B5F316600B04932 /* UINavigationControllerExtension.swift */; };
+		E4C8DCDB2BA132FA00308E53 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C8DCDA2BA132FA00308E53 /* CameraViewController.swift */; };
+		E4D3D33A2BC45B49009772E4 /* RecommendationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3D3392BC45B48009772E4 /* RecommendationCardView.swift */; };
+		E4D3D33C2BC45FAE009772E4 /* RecommendationsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3D33B2BC45FAE009772E4 /* RecommendationsCard.swift */; };
+		E4DAB62E2BA2FA1D004C4F63 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DAB62D2BA2FA1D004C4F63 /* InputField.swift */; };
 		E4FA41B22B66F5990016F319 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA41B12B66F5990016F319 /* NameView.swift */; };
-		E4FA6A1F2B77EDC600169C89 /* EffectsLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */; };
+		E4FAFE242BCAE4E40024A2D0 /* NotificationsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAFE232BCAE4E40024A2D0 /* NotificationsSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40E5A3D2BAFA1510047C777 /* NotificationsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsView.swift; sourceTree = "<group>"; };
+		E424665A2BB3084E00D0638E /* CalendarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeView.swift; sourceTree = "<group>"; };
+		E424665C2BB3093C00D0638E /* CustomDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerView.swift; sourceTree = "<group>"; };
+		E424665E2BB5BA3200D0638E /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		E424666A2BB62F0300D0638E /* ContributionsCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsCalendar.swift; sourceTree = "<group>"; };
+		E424666C2BB631C600D0638E /* ContributionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionCell.swift; sourceTree = "<group>"; };
+		E430EF162B8D2BA6009D897F /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		E43FE6C52B67E7260000BD0D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E441B6392B5DD91700E2F481 /* WinningYear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WinningYear.entitlements; sourceTree = "<group>"; };
 		E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		E452217F2B6430E70054D6EB /* Congratulations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congratulations.swift; sourceTree = "<group>"; };
+		E4553DD72BA6468A00E3F036 /* StreakCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalendarView.swift; sourceTree = "<group>"; };
 		E46A46792B58A6CD0052B207 /* WinningYearApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningYearApp.swift; sourceTree = "<group>"; };
 		E46A467D2B58A6D10052B207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E46A46802B58A6D10052B207 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E46D2A962B592E10001AD753 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		E470167C2B5EB59D00D799BE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		E47C02F22BA4BC0A00FC3A97 /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
+		E47C724F2BBB35E4004828C9 /* ContributionsCalendarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionsCalendarContent.swift; sourceTree = "<group>"; };
 		E487F9DC2B5F689500D39C50 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E4A09CF92B58A8F0000300A5 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E4A09CFB2B58AACF000300A5 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		E4A09CFD2B58AD88000300A5 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		E4A85F002B5949AC0052FBD2 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E4B39DE32B5F316600B04932 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		E4C8DCDA2BA132FA00308E53 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E4CEE24F2B8FB91F00D7D3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E4D3D3392BC45B48009772E4 /* RecommendationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCardView.swift; sourceTree = "<group>"; };
+		E4D3D33B2BC45FAE009772E4 /* RecommendationsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCard.swift; sourceTree = "<group>"; };
+		E4DAB62D2BA2FA1D004C4F63 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		E4FA41B02B66E6170016F319 /* WinningYear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinningYear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA41B12B66F5990016F319 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		E4FAFE232BCAE4E40024A2D0 /* NotificationsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +82,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E446D6FF2B7DAB7000D4C044 /* ConfettiSwiftUI in Frameworks */,
-				E452217E2B642E060054D6EB /* EffectsLibrary in Frameworks */,
-				E4FA6A1F2B77EDC600169C89 /* EffectsLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +91,17 @@
 		E46A466D2B58A6CD0052B207 = {
 			isa = PBXGroup;
 			children = (
+				E4FAFE232BCAE4E40024A2D0 /* NotificationsSheet.swift */,
+				E4D3D33B2BC45FAE009772E4 /* RecommendationsCard.swift */,
+				E4D3D3392BC45B48009772E4 /* RecommendationCardView.swift */,
+				E47C724F2BBB35E4004828C9 /* ContributionsCalendarContent.swift */,
+				E424665E2BB5BA3200D0638E /* DateValue.swift */,
+				E47C02F22BA4BC0A00FC3A97 /* ImageUtility.swift */,
+				E4DAB62D2BA2FA1D004C4F63 /* InputField.swift */,
+				E4C8DCDA2BA132FA00308E53 /* CameraViewController.swift */,
 				E446D6FB2B7BD1A600D4C044 /* NotificationManager.swift */,
+				E40E5A3D2BAFA1510047C777 /* NotificationsSettingsView.swift */,
+				E430EF162B8D2BA6009D897F /* CameraView.swift */,
 				E43FE6C52B67E7260000BD0D /* WelcomeView.swift */,
 				E452217F2B6430E70054D6EB /* Congratulations.swift */,
 				E46A46782B58A6CD0052B207 /* WinningYear */,
@@ -75,6 +112,7 @@
 		E46A46782B58A6CD0052B207 /* WinningYear */ = {
 			isa = PBXGroup;
 			children = (
+				E4CEE24F2B8FB91F00D7D3FF /* Info.plist */,
 				E441B6392B5DD91700E2F481 /* WinningYear.entitlements */,
 				E46A46792B58A6CD0052B207 /* WinningYearApp.swift */,
 				E46D2A952B592908001AD753 /* Models */,
@@ -106,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E4A85F002B5949AC0052FBD2 /* ListViewModel.swift */,
+				E4553DD72BA6468A00E3F036 /* StreakCalendarView.swift */,
 				E4B39DE32B5F316600B04932 /* UINavigationControllerExtension.swift */,
 			);
 			path = ViewModels;
@@ -120,6 +159,10 @@
 				E4A09CFD2B58AD88000300A5 /* AddView.swift */,
 				E4A09CFB2B58AACF000300A5 /* ListRowView.swift */,
 				E4FA41B12B66F5990016F319 /* NameView.swift */,
+				E424665A2BB3084E00D0638E /* CalendarHomeView.swift */,
+				E424665C2BB3093C00D0638E /* CustomDatePickerView.swift */,
+				E424666A2BB62F0300D0638E /* ContributionsCalendar.swift */,
+				E424666C2BB631C600D0638E /* ContributionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,8 +184,6 @@
 			);
 			name = WinningYear;
 			packageProductDependencies = (
-				E452217D2B642E060054D6EB /* EffectsLibrary */,
-				E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */,
 				E446D6FE2B7DAB7000D4C044 /* ConfettiSwiftUI */,
 			);
 			productName = WinningYear;
@@ -174,7 +215,6 @@
 			);
 			mainGroup = E46A466D2B58A6CD0052B207;
 			packageReferences = (
-				E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */,
 				E446D6FD2B7DAB7000D4C044 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = E46A466D2B58A6CD0052B207;
@@ -203,19 +243,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4553DD82BA6468A00E3F036 /* StreakCalendarView.swift in Sources */,
+				E47C72502BBB35E4004828C9 /* ContributionsCalendarContent.swift in Sources */,
+				E4FAFE242BCAE4E40024A2D0 /* NotificationsSheet.swift in Sources */,
+				E424666D2BB631C600D0638E /* ContributionCell.swift in Sources */,
+				E424665B2BB3084E00D0638E /* CalendarHomeView.swift in Sources */,
 				E46D2A972B592E10001AD753 /* ItemModel.swift in Sources */,
+				E424665F2BB5BA3200D0638E /* DateValue.swift in Sources */,
+				E430EF172B8D2BA6009D897F /* CameraView.swift in Sources */,
 				E4A09CFE2B58AD88000300A5 /* AddView.swift in Sources */,
+				E424665D2BB3093C00D0638E /* CustomDatePickerView.swift in Sources */,
 				E487F9DD2B5F689500D39C50 /* SplashScreenView.swift in Sources */,
 				E470167D2B5EB59D00D799BE /* SignInView.swift in Sources */,
 				E4A85F012B5949AC0052FBD2 /* ListViewModel.swift in Sources */,
+				E4D3D33A2BC45B49009772E4 /* RecommendationCardView.swift in Sources */,
 				E46A467A2B58A6CD0052B207 /* WinningYearApp.swift in Sources */,
+				E424666B2BB62F0300D0638E /* ContributionsCalendar.swift in Sources */,
 				E446D6FC2B7BD1A600D4C044 /* NotificationManager.swift in Sources */,
+				E47C02F32BA4BC0A00FC3A97 /* ImageUtility.swift in Sources */,
 				E4FA41B22B66F5990016F319 /* NameView.swift in Sources */,
 				E43FE6C62B67E7260000BD0D /* WelcomeView.swift in Sources */,
 				E4A09CFA2B58A8F0000300A5 /* ListView.swift in Sources */,
+				E4C8DCDB2BA132FA00308E53 /* CameraViewController.swift in Sources */,
 				E4A09CFC2B58AACF000300A5 /* ListRowView.swift in Sources */,
 				E4B39DE42B5F316600B04932 /* UINavigationControllerExtension.swift in Sources */,
+				E40E5A3E2BAFA1510047C777 /* NotificationsSettingsView.swift in Sources */,
 				E45221802B6430E70054D6EB /* Congratulations.swift in Sources */,
+				E4DAB62E2BA2FA1D004C4F63 /* InputField.swift in Sources */,
+				E4D3D33C2BC45FAE009772E4 /* RecommendationsCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +406,15 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = WinningYear/WinningYear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WinningYear/Preview Content\"";
 				DEVELOPMENT_TEAM = 3H4W889GM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WinningYear/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Winning Year";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application uses camera to allow users to take pictures of their wins, save it directly to their phone and upload it to their win list. We do not collect user data.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The application uses photo library to allow users to upload pictures of their wins to the app. We do not collect user data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -367,7 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbara.WinningYear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -387,12 +445,15 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = WinningYear/WinningYear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WinningYear/Preview Content\"";
 				DEVELOPMENT_TEAM = 3H4W889GM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WinningYear/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Winning Year";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The application uses camera to allow users to take pictures of their wins, save it directly to their phone and upload it to their win list. We do not collect user data.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The application uses photo library to allow users to upload pictures of their wins to the app. We do not collect user data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -403,7 +464,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.barbara.WinningYear;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -447,14 +508,6 @@
 				minimumVersion = 1.1.0;
 			};
 		};
-		E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GetStream/effects-library";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -462,16 +515,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E446D6FD2B7DAB7000D4C044 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		E452217D2B642E060054D6EB /* EffectsLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */;
-			productName = EffectsLibrary;
-		};
-		E4FA6A1E2B77EDC600169C89 /* EffectsLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E452217C2B642E060054D6EB /* XCRemoteSwiftPackageReference "effects-library" */;
-			productName = EffectsLibrary;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

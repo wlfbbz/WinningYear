@@ -9,11 +9,11 @@ import SwiftUI
 import UserNotifications
 
 class NotificationManager: ObservableObject {
-
+    
     init() {
         requestAuthorization()
     }
-
+    
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
@@ -23,26 +23,41 @@ class NotificationManager: ObservableObject {
             }
         }
     }
-
+    
+//    func purgeNotifications() {
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+//        print("Removed all pending notifications")
+//    }
+    
     func scheduleNotifications() {
-        scheduleNotification(atHour: 20, minute: 41, title: "Time to reflect", message: "Tell us how your day went today") // 8:41 PM
+        // Purge existing notifications before scheduling new ones
+//        purgeNotifications()
+        
+        scheduleNotification(atHour: 20, minute: 41, title: "Time to reflect", message: "Tell us how your day went today") // 8:40 PM
         scheduleNotification(atHour: 15, minute: 0, title: "Winning Year", message: "You've got this, keep going!") // 3:00 PM
     }
-
-    private func scheduleNotification(atHour hour: Int, minute: Int, title: String, message: String) {
+    
+    func removeNotification(identifier: String) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+        print("Removed notification with identifier: \(identifier)")
+    }
+    
+    public func scheduleNotification(atHour hour: Int, minute: Int, title: String, message: String) {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message
         content.sound = .default
-
+        
         var dateComponents = DateComponents()
         dateComponents.hour = hour
         dateComponents.minute = minute
-
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-        let request = UNNotificationRequest(identifier: "dailyNotification_\(hour)_\(minute)", content: content, trigger: trigger)
-
+        
+        let requestIdentifier = "dailyNotification_\(hour)_\(minute)"
+        
+        let request = UNNotificationRequest(identifier: requestIdentifier, content: content, trigger: trigger)
+        
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error scheduling notification: \(error.localizedDescription)")

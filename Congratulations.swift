@@ -10,12 +10,15 @@ import ConfettiSwiftUI
 struct Congratulations: View {
     @State private var size = 0.7
     @State private var counter = 0
-    
+    var image: UIImage?
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.ignoresSafeArea()
+                Color.black.edgesIgnoringSafeArea(.all)
                 VStack {
+                    Spacer()
                     Text("🏆")
                         .font(.system(size: 80))
                         .padding(.bottom, 10)
@@ -36,12 +39,41 @@ struct Congratulations: View {
                     Text("You did an amazing job and deserve a 🍪 or a nice green 🍏")
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 40)
-                        .lineSpacing(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                        .lineSpacing(10.0)
                         .font(.system(size: 16))
                         .padding(.bottom, 20)
                         .frame(maxWidth: .infinity)
                         .foregroundColor(.white)
-                }
+                    
+                    if let image = image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: 300, maxHeight: 200)
+                            .cornerRadius(8)
+                            .padding(.horizontal)
+                            .padding(.vertical)
+                    }
+                    
+                    VStack {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text("Continue")
+                                .font(.system(size: 16).weight(.bold))
+                                .foregroundColor(.black)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(.white)
+                                .cornerRadius(20)
+                                .padding(.horizontal, 24)
+                                .padding(.top, 20)
+                        })
+                    }
+                    Spacer()
+
+                } // end of vstack
+ 
             }
             .navigationBarHidden(true)
         }

@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import UIKit
 
 @main
 struct WinningYearApp: App {
@@ -18,10 +19,8 @@ struct WinningYearApp: App {
             SplashScreenView()
                 .environmentObject(listViewModel)
                 .preferredColorScheme(.light) // Setting the color scheme to light mode
-
         }
     }
 }
-
 
 

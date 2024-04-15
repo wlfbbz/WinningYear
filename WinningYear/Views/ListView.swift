@@ -6,65 +6,147 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ListView: View {
     
     @EnvironmentObject var listViewModel: ListViewModel
     @AppStorage("userId") var userId: String = "" // Add the AppStorage for userId || DO NOT COMMENTOUT
     @State private var isAddViewPresented = false
+    @State private var showEnlargedImage = false
+    @State private var showContributions = false // Add this line
+    @State private var showNotificationsSettings = false
+    private let notificationManager = NotificationManager()
+    @State private var hasRequestedNotificationPermission = false
+    @StateObject private var viewModel = ListViewModel()
+    @State private var showMainView = true // Add this line
 
-    
     var body: some View {
-        
+
         ZStack {
-            Color.checkmark.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            Color.checkmark.edgesIgnoringSafeArea(.all)
             VStack {
-                VStack (spacing: 30) {
+                VStack (spacing: 10) {
+                    HStack {
+                        Spacer()
+                        Spacer()
                         Text("Year of Winning")
                             .font(.system(size: 24))
                             .foregroundStyle(.black)
-                    
-                        HStack {
-                            Text("My Wins 🥳")
-                                .font(.title2)
-                                .foregroundStyle(.black)
-                            Spacer()
+                        Spacer()
+
+                        
+                        // Add the settings button
+                        Button(action: {
+                            showNotificationsSettings = true
+                        }) {
+                            Image("bell")
+                                .resizable()
+                                .frame(width: 16, height: 16)
+                                .foregroundColor(.black)
+                                .opacity(0.5)
+                                .font(.system(size: 24))
+                                .padding(8)
+                                .background(.buttonText)
+                                .clipShape(Circle())
+                                .padding()
                         }
-                        .padding(.horizontal, 24)
+                        .fullScreenCover(isPresented: $showNotificationsSettings) {
+                            NotificationsSettingsView()
+                        }
+
+                    }
+//                    HStack (spacing: 0) {
+//                        Spacer()
+//                                           Button(action: {
+//                                               showMainView = true
+//                                           }) {
+//                                               Image(showMainView ? "list.fill" : "list")
+//                                                   .resizable()
+//                                                   .frame(width: 32, height: 32)
+//                                                   .padding(1)
+////                                                   .background(.white.opacity(0.5))
+//                                                   .cornerRadius(8)
+////                                                   .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.buttonText, lineWidth: 3))
+//                                           }
+//
+//                                           Button(action: {
+//                                               showMainView = false
+//                                           }) {
+//                                               Image(showMainView ? "cal" : "cal.fill")
+//                                                   .resizable()
+//                                                   .frame(width: 32, height: 32)
+//                                                   .padding(1)
+//                                                   .cornerRadius(8)
+////                                                   .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.black, lineWidth: 1))
+//                                           }
+//                                       }
+//                                        .padding(.horizontal, 20) // Add some padding at the bottom
+
+
                 }// end of vstack
                 .padding(.top, 30)
                 
-                VStack {
-                    List {
-                        ForEach(listViewModel.itemsGroupedByPeriod.keys.sorted(by: { sortPeriods(lhs: $0, rhs: $1) }), id: \.self) { period in                        Section (header: Text(period)/*.font(.subheadline)*/.textCase(.uppercase).font(.system(size: 12, weight: .bold)).padding(.bottom, 5).foregroundStyle(.gray).padding(.horizontal, 2)) {
-                                ForEach(listViewModel.itemsGroupedByPeriod[period]!, id: \.id) { item in
-                                    ListRowView(item: item)
-//                                        .padding(.bottom, 5)
-                                    .listRowBackground(Color.clear)
-                                    .listRowInsets(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
-                                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                                    .listRowSeparator(.hidden)
-                                    .padding(.horizontal)
-                                    .background(Color.white)
-//                                    .overlay(
-//                                                RoundedRectangle(cornerRadius: 10)
-//                                                    .stroke(Color.gray, lineWidth: 5)
-//                                                    .opacity(0.2)
-//                                            )
-                                }
-                                .onDelete { indexSet in
-                                    listViewModel.deleteItem(period: period, indexSet: indexSet)
-                                }
-                            }
-                        }
-                        .cornerRadius(10)
-                        .padding(.horizontal, -15)
-                        
-                    }
-                    .listStyle(PlainListStyle())
-                } // end of vstack
-                .padding(.horizontal, 20)
-                .padding(.top, -10)
+                // Add a condition to show the appropriate view based on the state
+                               if showMainView {
+                                   // Your ListView content
+                                   // ...
+                                   HStack {
+                                       Text("My Wins 🥳")
+                                           .font(.title2)
+                                           .foregroundStyle(.black)
+                                           .padding(.horizontal, 24)
+                                       Spacer()
+           //                            Button(action: {
+           //                                showContributions.toggle()
+           //                            }) {
+           //                                Image(systemName: "calendar")
+           //                                    .foregroundColor(.gray)
+           //                                    .font(.system(size: 24))
+           //                                    .padding()
+           //                            }
+           //                            .sheet(isPresented: $showContributions) {
+           //                                ContributionsCalendar(viewModel: viewModel)
+           //                            }
+                                   }
+           //                        .padding(.horizontal, 24)
+                                   VStack {
+                                       List {
+                                           ForEach(listViewModel.itemsGroupedByPeriod.keys.sorted(by: { sortPeriods(lhs: $0, rhs: $1) }), id: \.self) { period in                        Section (header: Text(period)/*.font(.subheadline)*/.textCase(.uppercase).font(.system(size: 12, weight: .bold)).foregroundStyle(.gray).padding(.horizontal, 2).listRowBackground(Color.black)) {
+                                                   ForEach(listViewModel.itemsGroupedByPeriod[period]!, id: \.id) { item in
+                                                       ListRowView(item: item)
+                                                       .listRowBackground(Color.clear)
+                                                       .listRowInsets(EdgeInsets(top: 2, leading: 16, bottom: 2, trailing: 16))
+                                                       .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                                       .listRowSeparator(.hidden)
+                                                       .padding(.horizontal)
+                                                       .background(Color.white.opacity(1))
+                   //                                    .stroke(Color.black, lineWidth: 1)
+                   //                                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("border"), lineWidth: 1))
+                                                   }
+                                                   .onDelete { indexSet in
+                                                       listViewModel.deleteItem(period: period, indexSet: indexSet)
+                                                   }
+                                               }
+                                           }
+                                           .cornerRadius(10)
+                                           .padding(.horizontal, -15)
+                                           
+                                       }
+                                       .listStyle(PlainListStyle())
+                                   } // end of vstack
+                                   .padding(.horizontal, 20)
+                                   .padding(.top, -10)
+                               } else {
+                                   // Add your other view's content here
+                                   ContributionsCalendar(viewModel: viewModel)
+//                                       .padding()
+//                                       .background(.white)
+//                                       .cornerRadius(20)
+//                                       .padding()
+                               }
+
+
                 
                 Button(action: {
                                     isAddViewPresented.toggle()
@@ -80,6 +162,8 @@ struct ListView: View {
                                     AddView()
                                         .environmentObject(listViewModel)
                                 }
+                
+                
 //                NavigationLink(destination: AddView()) {
 //                                Image(systemName: "plus")
 //                                    .padding(16)
@@ -87,9 +171,9 @@ struct ListView: View {
 //                                    .background(Color.gray)
 //                                    .clipShape(Circle())
 //                                    .padding()
-//                
+//
 //                }
-//                
+//
 //                Button(action: {
 //                    // Perform sign-out action here
 //                    userId = "" // Clear the userId
@@ -103,11 +187,19 @@ struct ListView: View {
 //                }
 //                .padding()
                 
+                
+                
             } // end of VStack
-            .padding(.top, 50)
+            .padding(.top, 35)
             .padding(.bottom, 30)
         } // end of Zstack
         .ignoresSafeArea()
+        .onAppear {
+            if !hasRequestedNotificationPermission {
+                notificationManager.requestAuthorization()
+                hasRequestedNotificationPermission = true
+            }
+        }
     }
     
     // Custom sort function for period titles, including years
@@ -163,3 +255,5 @@ struct ListView_Previews: PreviewProvider {
 
 
 
+ 
+ 
