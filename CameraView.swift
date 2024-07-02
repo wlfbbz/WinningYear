@@ -31,7 +31,6 @@ struct CameraView: View {
             VStack {
                 if camera.isTaken {
                     HStack {
-                        Spacer()
                         Button(action: {
                             camera.reTake()
                         }, label: {
@@ -43,7 +42,8 @@ struct CameraView: View {
                                 .clipShape(Capsule())
                                 .padding(.top, 40)
                         })
-                        .padding(.trailing, 16)
+                        .padding(.leading, 16)
+                        Spacer()
                     }
                 } else {
                     HStack {
@@ -82,9 +82,7 @@ struct CameraView: View {
                                                     }
                                                 }
                         Spacer()
-                        
-                        Spacer()
-                        
+                                                
                         Button(action: camera.takePic, label: {
                             ZStack {
                                 Circle()
@@ -146,6 +144,12 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     
     var photoSavedHandler: ((Data) -> Void)?
     
+    @Published var photoSource: PhotoSource = .camera
+
+    enum PhotoSource {
+        case camera
+        case photoPicker
+    }
     
     // New property to keep track of current camera position
     @Published var currentPosition: AVCaptureDevice.Position = .back
@@ -356,6 +360,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     }
     func loadImage(imageData: Data) {
         self.picData = imageData
+        self.photoSource = .photoPicker // Set the photo source to photo picker
         DispatchQueue.main.async {
             self.isTaken.toggle()
             self.session.stopRunning()
@@ -471,12 +476,18 @@ struct SelectedImageView: View {
             VStack {
                 Spacer()
                 HStack {
+                    Spacer()
                     Button(action: {
-                        camera.savePic { success in
-                            if success {
-                                photoSavedHandler?(camera.picData)
-                                presentationMode.wrappedValue.dismiss()
+                        if camera.photoSource == .camera {
+                            camera.savePic { success in
+                                if success {
+                                    photoSavedHandler?(camera.picData)
+                                    presentationMode.wrappedValue.dismiss()
+                                }
                             }
+                        } else {
+                            photoSavedHandler?(camera.picData)
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }, label: {
                         Text("Use photo")
@@ -488,11 +499,11 @@ struct SelectedImageView: View {
                             .clipShape(Capsule())
                             .padding(.bottom, 40)
                     })
-                    .padding(.leading)
-                    Spacer()
+                    .padding(.trailing, 16)
                 }
             }
         }
     }
 }
  
+

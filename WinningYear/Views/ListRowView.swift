@@ -22,7 +22,7 @@ struct ListRowView: View {
     let sampleRecommendation = "Congratulations on having your photo featured in the Dr Martens store! To celebrate this achievement, you could:\n\n1. Share the news on social media and tag Dr Martens to express your appreciation.\n\n2. Treat yourself to a new pair of Dr Martens shoes to commemorate the occasion.\n\n3. Frame the photo and display it proudly in your home or workspace.\n\n4. Organize a small gathering with friends and family to celebrate your success.\n\n5. Write a blog post or article about your experience and the story behind the photo.\n\nRemember to take a moment to reflect on your hard work and enjoy this well-deserved recognition!"
 
 
-    let apiKey = "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"
+//    let apiKey = "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"
 //    let service: AnthropicService
     
     init(item: ItemModel) {
@@ -305,13 +305,14 @@ struct ListRowView: View {
         }
         
         var body: some View {
-            ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+            ZStack (alignment: .bottomLeading) {
+//                Color.black.edgesIgnoringSafeArea(.all)
                 
                 Image(uiImage: UIImage(data: items[currentIndex].imageData ?? Data()) ?? UIImage())
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .clipped()
                     .gesture(
                         DragGesture()
                             .onChanged { gesture in
@@ -334,24 +335,22 @@ struct ListRowView: View {
                         currentIndex = (currentIndex + 1) % items.count
                     }
                 
-                VStack {
-                    Spacer()
+                VStack(alignment: .leading, spacing: 8) {
                     Text(items[currentIndex].title)
                         .font(.subheadline)
                         .foregroundColor(.white)
-                        .padding(.horizontal)
-                        .frame(maxWidth: .infinity, maxHeight: 20, alignment: .topLeading)
-                        .padding(.horizontal)
                     Text(formatDate(items[currentIndex].timestamp))
                         .font(.subheadline)
                         .foregroundColor(Color("border"))
                         .opacity(0.8)
-                        .padding(.horizontal)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal)
                 }
+                .padding(.bottom)
+                    .background(Color.black.opacity(0.0))
+                    .padding()
+                }
+                .edgesIgnoringSafeArea(.all)
             }
-        }
+        
         
         private func formatDate(_ date: Date) -> String {
             let dateFormatter = DateFormatter()

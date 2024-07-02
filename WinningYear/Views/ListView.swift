@@ -20,6 +20,7 @@ struct ListView: View {
     @State private var hasRequestedNotificationPermission = false
     @StateObject private var viewModel = ListViewModel()
     @State private var showMainView = true // Add this line
+//    @StateObject private var listViewModel = ListViewModel()
 
     var body: some View {
 
@@ -42,46 +43,38 @@ struct ListView: View {
                         }) {
                             Image("bell")
                                 .resizable()
-                                .frame(width: 16, height: 16)
+                                .frame(width: 24, height: 24)
                                 .foregroundColor(.black)
                                 .opacity(0.5)
                                 .font(.system(size: 24))
                                 .padding(8)
-                                .background(.buttonText)
+//                                .background(.buttonText)
                                 .clipShape(Circle())
-                                .padding()
+                                .padding(12)
                         }
                         .fullScreenCover(isPresented: $showNotificationsSettings) {
                             NotificationsSettingsView()
                         }
 
                     }
-//                    HStack (spacing: 0) {
-//                        Spacer()
-//                                           Button(action: {
-//                                               showMainView = true
-//                                           }) {
-//                                               Image(showMainView ? "list.fill" : "list")
-//                                                   .resizable()
-//                                                   .frame(width: 32, height: 32)
-//                                                   .padding(1)
-////                                                   .background(.white.opacity(0.5))
-//                                                   .cornerRadius(8)
-////                                                   .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.buttonText, lineWidth: 3))
-//                                           }
-//
-//                                           Button(action: {
-//                                               showMainView = false
-//                                           }) {
-//                                               Image(showMainView ? "cal" : "cal.fill")
-//                                                   .resizable()
-//                                                   .frame(width: 32, height: 32)
-//                                                   .padding(1)
-//                                                   .cornerRadius(8)
-////                                                   .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.black, lineWidth: 1))
-//                                           }
-//                                       }
-//                                        .padding(.horizontal, 20) // Add some padding at the bottom
+                    HStack {
+                        Text("My Wins 🥳")
+                            .font(.title2)
+                            .foregroundStyle(.black)
+                        Spacer()
+                        Button(action: {
+                            showMainView.toggle()
+                        }) {
+                            Image(showMainView ? "cal.fill" : "list.fill")
+                                .resizable()
+                                .opacity(0.7)
+                                .frame(width: 28, height: 24)
+////                                .padding(1)
+////                                .cornerRadius(8)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom)
 
 
                 }// end of vstack
@@ -92,10 +85,10 @@ struct ListView: View {
                                    // Your ListView content
                                    // ...
                                    HStack {
-                                       Text("My Wins 🥳")
-                                           .font(.title2)
-                                           .foregroundStyle(.black)
-                                           .padding(.horizontal, 24)
+//                                       Text("My Wins 🥳")
+//                                           .font(.title2)
+//                                           .foregroundStyle(.black)
+//                                           .padding(.horizontal, 24)
                                        Spacer()
            //                            Button(action: {
            //                                showContributions.toggle()
@@ -136,10 +129,10 @@ struct ListView: View {
                                        .listStyle(PlainListStyle())
                                    } // end of vstack
                                    .padding(.horizontal, 20)
-                                   .padding(.top, -10)
+                                   .padding(.top, -20)
                                } else {
                                    // Add your other view's content here
-                                   ContributionsCalendar(viewModel: viewModel)
+                                   ContributionsCalendar(viewModel: listViewModel)
 //                                       .padding()
 //                                       .background(.white)
 //                                       .cornerRadius(20)

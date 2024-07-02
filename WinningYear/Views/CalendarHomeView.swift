@@ -18,7 +18,7 @@ struct CalendarHomeView: View {
             VStack (spacing: 20) {
                 
                 // Custom Date Picker...
-                CustomDatePickerView(currentDate: $currentDate)
+//                CustomDatePickerView(currentDate: $currentDate)
             }
         }
         

@@ -36,6 +36,7 @@
 		E4D3D33A2BC45B49009772E4 /* RecommendationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3D3392BC45B48009772E4 /* RecommendationCardView.swift */; };
 		E4D3D33C2BC45FAE009772E4 /* RecommendationsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D3D33B2BC45FAE009772E4 /* RecommendationsCard.swift */; };
 		E4DAB62E2BA2FA1D004C4F63 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DAB62D2BA2FA1D004C4F63 /* InputField.swift */; };
+		E4DF932E2BE29BE7008EAA0F /* UiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DF932D2BE29BE7008EAA0F /* UiTest.swift */; };
 		E4FA41B22B66F5990016F319 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA41B12B66F5990016F319 /* NameView.swift */; };
 		E4FAFE242BCAE4E40024A2D0 /* NotificationsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAFE232BCAE4E40024A2D0 /* NotificationsSheet.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		E4D3D3392BC45B48009772E4 /* RecommendationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCardView.swift; sourceTree = "<group>"; };
 		E4D3D33B2BC45FAE009772E4 /* RecommendationsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsCard.swift; sourceTree = "<group>"; };
 		E4DAB62D2BA2FA1D004C4F63 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		E4DF932D2BE29BE7008EAA0F /* UiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiTest.swift; sourceTree = "<group>"; };
 		E4FA41B02B66E6170016F319 /* WinningYear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinningYear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FA41B12B66F5990016F319 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		E4FAFE232BCAE4E40024A2D0 /* NotificationsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSheet.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				E430EF162B8D2BA6009D897F /* CameraView.swift */,
 				E43FE6C52B67E7260000BD0D /* WelcomeView.swift */,
 				E452217F2B6430E70054D6EB /* Congratulations.swift */,
+				E4DF932D2BE29BE7008EAA0F /* UiTest.swift */,
 				E46A46782B58A6CD0052B207 /* WinningYear */,
 				E4FA41B02B66E6170016F319 /* WinningYear.app */,
 			);
@@ -261,6 +264,7 @@
 				E424666B2BB62F0300D0638E /* ContributionsCalendar.swift in Sources */,
 				E446D6FC2B7BD1A600D4C044 /* NotificationManager.swift in Sources */,
 				E47C02F32BA4BC0A00FC3A97 /* ImageUtility.swift in Sources */,
+				E4DF932E2BE29BE7008EAA0F /* UiTest.swift in Sources */,
 				E4FA41B22B66F5990016F319 /* NameView.swift in Sources */,
 				E43FE6C62B67E7260000BD0D /* WelcomeView.swift in Sources */,
 				E4A09CFA2B58A8F0000300A5 /* ListView.swift in Sources */,

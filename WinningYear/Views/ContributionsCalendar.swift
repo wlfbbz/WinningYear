@@ -12,13 +12,17 @@ struct ContributionsCalendar: View {
     let columns = Array(repeating: GridItem(.flexible()), count: 7)
     @State private var currentDate = Date()
     @ObservedObject var viewModel: ListViewModel
+    @State private var selectedItems: [ItemModel] = []
+    @State private var showItemDetails = false
+    @State private var selectedDate: Date?
+    @State private var selectedDateWrapper: DateWrapper?
 
     // Sample data for testing, replace it with your actual data source
     let items: [ItemModel] = [
         ItemModel(id: "1", title: "First item!", timestamp: Date(), imageData: nil)
         // Add more sample items as needed
     ]
-    let weekdays: [String] = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+    let weekdays: [String] = ["M","T","W","T","F","S","S"]
 
     let monthlabel: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -27,56 +31,163 @@ struct ContributionsCalendar: View {
         VStack {
             Spacer()
             VStack (spacing: 0) {
-                Text("Contributions")
-                    .font(.title3.bold())
-                HStack(spacing: 0) {
-                    Text("2024")
-                        .foregroundColor(.gray)
-                        .opacity(0.25)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-                    .padding(.vertical, 8)
-
+//                HStack {
+//                    Spacer()
+//                    Text("Contributions:")
+//                        .font(.title3)
+//                    HStack {
+//                        VStack {
+//                            Text("\(viewModel.items.count)")
+//                                .font(.system(size: 16))
+//                            //                            .padding(8)
+//                            //                            .background(.blue.opacity(0.2))
+//                                .cornerRadius(8)
+//                                .foregroundColor(.gray.opacity(0.5))
+//                            //                        Text("You have made")
+//                            //                            .font(.system(size: 12))
+//                            //                        Text(viewModel.items.count == 1 ? "contribution this year" : "contributions this year")
+//                            //                            .font(.system(size: 12))
+//                        }
+//                    }
+//                    Spacer()
+//                }
+//                .padding(.horizontal)
+//                
+//                HStack(spacing: 0) {
+//                    Text("2024")
+//                        .foregroundColor(.gray)
+//                        .opacity(0.25)
+//                }
+//                .frame(maxWidth: .infinity, alignment: .leading)
+//                .padding(.horizontal)
+//                .padding(.vertical, 8)
+                
+                //                HStack {
+                //                    let rows = Array(repeating: GridItem(.flexible(), spacing: 0), count: 12)
+                //                        Text("2024")
+                //                            .foregroundColor(.gray)
+                //                            .opacity(0.25)
+                ////                            .font(.system(size: 14))
+                //
+                //                    LazyVGrid(columns: columns, spacing: 8) {
+                //                        // Weekday abbreviations row
+                //                        ForEach(weekdays, id: \.self) { weekday in
+                //                            Text(weekday)
+                //                                .font(.caption)
+                //                                .foregroundColor(.gray)
+                //                        }
+                //
+                //
+                //                    }
+                //                                .frame(maxWidth: .infinity)
+                //                            }
+                //                .padding()
+                
                 ScrollView (.vertical, showsIndicators: false) {
-                    Text("You have won")
-                    Text("32")
-                        .font(.system(size: 128))
-                        .padding(32)
-                        .background(.gray.opacity(0.2))
-                        .clipShape(Circle())
-                    Text("times this year")
-                        .padding(.bottom)
-                    HStack {
-                        let rows = Array(repeating: GridItem(.flexible(), spacing: 0), count: 12)
-                        LazyHGrid(rows: rows, spacing: 0) {
-                            ForEach(monthlabel, id: \.self) { monthlabel in
-                                Text(monthlabel)
-                                    .textCase(.uppercase)
-                                    .foregroundColor(.gray)
-                                        }
-                                    }
-
-                        LazyVGrid(columns: columns, spacing: 8) {
-                            // Weekday abbreviations row
-                            ForEach(weekdays, id: \.self) { weekday in
-                                Text(weekday)
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                            }
-
-                            // Date cells
-                            ForEach(getDates(), id: \.self) { date in
-                                ContributionCell(date: date ?? Date(), items: viewModel.items)
-                            }
-                        }
-                                    .frame(maxWidth: .infinity)
+                    VStack (spacing: 0) {
+                        HStack {
+                            Spacer()
+                            Text("Contributions:")
+                                .font(.system(size: 16))
+                            HStack {
+                                VStack {
+                                    Text("\(viewModel.items.count)")
+                                        .font(.system(size: 16))
+                                    //                            .padding(8)
+                                    //                            .background(.blue.opacity(0.2))
+                                        .cornerRadius(8)
+                                        .foregroundColor(.gray.opacity(0.5))
+                                    //                        Text("You have made")
+                                    //                            .font(.system(size: 12))
+                                    //                        Text(viewModel.items.count == 1 ? "contribution this year" : "contributions this year")
+                                    //                            .font(.system(size: 12))
                                 }
                             }
-                            .padding(.horizontal)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                        
+                        HStack(spacing: 0) {
+                            Text("2024")
+                                .foregroundColor(.gray)
+                                .opacity(0.25)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        HStack {
+                            let rows = Array(repeating: GridItem(.flexible(), spacing: 0), count: 12)
+                            LazyHGrid(rows: rows, spacing: 4) {
+                                ForEach(monthlabel, id: \.self) { monthlabel in
+                                    Text(monthlabel)
+                                        .font(.system(size: 16))
+                                        .textCase(.uppercase)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            
+                            LazyVGrid(columns: columns, spacing: 4) {
+                                // Weekday abbreviations row
+                                ForEach(Array(weekdays.enumerated()), id: \.offset) { index, weekday in
+                                    VStack(spacing: 0) {
+                                        Text(weekday)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                    }
+                                }
+                                
+                                // Date cells
+                                ForEach(getDates(), id: \.self) { date in
+                                    ContributionCell(date: date ?? Date(), items: viewModel.items) {
+                                        selectedDateWrapper = DateWrapper(date: date ?? Date())
+                                    }
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding(.horizontal)
                 }
             }
+            .sheet(item: $selectedDateWrapper) { dateWrapper in
+                let selectedItems = viewModel.items.filter { itemModel in
+                    Calendar.current.isDate(itemModel.timestamp, inSameDayAs: dateWrapper.date)
+                }
+                ItemDetailsView(items: selectedItems)
+            }
+            }
+        .frame(width: .infinity, height: .infinity)
+//        .padding(.vertical, 16)
         }
+    
+    struct DateWrapper: Identifiable {
+        let id = UUID()
+        let date: Date
+    }
+    
+    struct ItemDetailsView: View {
+        let items: [ItemModel]
+        
+        var body: some View {
+            List(items) { item in
+                VStack(alignment: .leading) {
+                    Text(item.title)
+                        .font(.headline)
+                    
+                    if let imageData = item.imageData, let image = UIImage(data: imageData) {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 200)
+                    }
+                    
+                    Text(item.timestamp, style: .date)
+                        .font(.subheadline)
+                }
+            }
+            .navigationBarTitle("Items")
+        }
+    }
     
     func getDates() -> [Date?] {
         var dates = [Date?]()

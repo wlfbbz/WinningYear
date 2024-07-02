@@ -228,8 +228,10 @@ struct AddView: View {
     }
     
     func saveButtonPressed() {
+        print("Captured Image Data: \(capturedImageData)")
         // Add the item and set showingCongratulations to true
         listViewModel.addItem(title: textFieldText, imageData: capturedImageData)
+        listViewModel.objectWillChange.send()
         hideKeyboard()
         showingCongratulations = true
         

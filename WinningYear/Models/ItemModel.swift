@@ -21,12 +21,5 @@ struct ItemModel: Identifiable, Hashable, Codable {
     }
 }
 
-func getSampleDate(offset: Int)->Date{
-    let calendar = Calendar.current
-    
-    let date = calendar.date(byAdding: .day, value: offset, to: Date())
-    
-    return date ?? Date()
-}
 
 
